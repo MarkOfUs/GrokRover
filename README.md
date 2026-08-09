@@ -9,7 +9,7 @@ To see RL GrokRovers drive on this terrain, check the website:
 
 ![jezero-delta-real](docs/img/jezero-delta-real-hero.png)
 
-The repo ships **22 real Jezero worlds** in [`worlds/`](worlds/) plus the
+The repo ships **17 real Jezero worlds** in [`worlds/`](worlds/) plus the
 pipeline to make more:
 
 ```bash
@@ -135,15 +135,10 @@ nothing for a rover to learn on. Same spot, raw vs full pipeline:
 | [jezero-ripple-scarp](worlds/jezero-ripple-scarp/) | 19.2 m | +0.90 |
 | [jezero-scarp-duality](worlds/jezero-scarp-duality/) | 12.5 m | +0.95 |
 | [jezero-scarp-regolith](worlds/jezero-scarp-regolith/) | 29.6 m | +0.99 |
-| [jezero-s-pale-scar](worlds/jezero-s-pale-scar/) | 35.7 m | +0.85 |
-| [jezero-yardang-furrows](worlds/jezero-yardang-furrows/) | 17.4 m | +0.96 |
-| [jezero-ripple-scarps](worlds/jezero-ripple-scarps/) | 19.2 m | +0.70 |
-| [jezero-corduroy-ridges](worlds/jezero-corduroy-ridges/) | 21.2 m | +0.50 |
 | [jezero-scarp-threshold](worlds/jezero-scarp-threshold/) | 25.7 m | +0.51 |
-| [jezero-dustfall-ridges](worlds/jezero-dustfall-ridges/) | 12.5 m | +0.99 |
 | [jezero-ridged-ochre-labyrinth](worlds/jezero-ridged-ochre-labyrinth/) | 20.4 m | +0.93 |
-| [jezero-dustspine-divide](worlds/jezero-dustspine-divide/) | 25.9 m | +0.77 |
 | [jezero-scarp-drift](worlds/jezero-scarp-drift/) | 22.9 m | +0.89 |
+| [jezero-ribbed-dust-yardangs](worlds/jezero-ribbed-dust-yardangs/) | 26.9 m | +1.00 |
 
 Hi-res 5120x5760 textures ship for the first 13 worlds; the newest batch binds
 its base-resolution texture. Each world is self-contained and keeps its

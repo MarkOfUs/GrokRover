@@ -218,7 +218,20 @@ def main() -> None:
     cells = candidate_cells()
     print(f"{len(cells)} valid cells; drawing {args.count} (seed {SEED})", flush=True)
     random.Random(SEED).shuffle(cells)
-    picked = cells[args.skip:args.skip + args.count]
+
+    # never redraw ground an existing world already covers
+    taken = set()
+    for p in (ROOT / "worlds").glob("*/assets/grok_originals/meta.json"):
+        try:
+            c = json.loads(p.read_text()).get("center_proj_m")
+            if c:
+                taken.add((float(c[0]), float(c[1])))
+        except Exception:
+            pass
+    fresh = [c for c in cells if (float(c[0]), float(c[1])) not in taken]
+    print(f"{len(taken)} cells already covered by existing worlds; "
+          f"{len(fresh)} fresh", flush=True)
+    picked = fresh[args.skip:args.skip + args.count]
 
     with ThreadPoolExecutor(max_workers=args.jobs) as ex:
         for line in ex.map(lambda t: make_world(*t),

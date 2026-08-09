@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583900.0,
+    1092200.0
+  ],
+  "lon_lat_deg": [
+    77.33316560911435,
+    18.42607462603344
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 26.906982421875,
+  "relief_std_m": 8.387349128723145,
+  "gates": {
+    "hm_detail_ratio": 0.4258868783673104,
+    "dtm_corr": 0.9969835883838168
+  },
+  "title": "Ribbed Dust Yardangs"
+}
