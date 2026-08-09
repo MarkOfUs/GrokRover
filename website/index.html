@@ -65,6 +65,11 @@
       </div>
 
       <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img class="hero-still" src="images/stills/parallel-1.jpg">
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
         <div class="column">
           <p>GrokRover is trained with reinforcement learning in NVIDIA Isaac Sim, on real Jezero Crater terrain finished by Grok Imagine edits that a Grok agent prompts itself.</p>
         </div>
@@ -114,13 +119,11 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <!-- Drop the clip at website/videos/inference.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
-        <div class="ph" data-video="videos/inference.mp4">
-          <span class="icon"><i class="fas fa-flag-checkered"></i></span>
-          <span class="ph-label">Video placeholder: inference.mp4</span>
-          <span class="ph-text">Chase camera: trained GrokRover drives this terrain to its goal</span>
+        <!-- Drop the clip at website/videos/inference.mp4 (16:9, ~10-20 s) and this image swaps to it automatically -->
+        <div class="media-slot" data-video="videos/inference.mp4">
+          <img src="images/stills/inference.jpg">
         </div>
-        <p>Chase camera: trained GrokRover driving on a pipeline world</p>
+        <p>GrokRovers on pipeline terrain. Red sphere: the goal. Green arrow: commanded heading.</p>
       </div>
     </div>
   </div>
@@ -136,21 +139,11 @@
       </div>
     </div>
     <div class="columns is-centered has-text-centered">
-      <div class="column is-half">
-        <!-- Drop the clip at website/videos/parallel-1.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
-        <div class="ph" data-video="videos/parallel-1.mp4">
-          <span class="icon"><i class="fas fa-robot"></i></span>
-          <span class="ph-label">Video placeholder: parallel-1.mp4</span>
-          <span class="ph-text">Parallel GrokRover environments training across a boulder field</span>
-        </div>
-        <p>Parallel training environments</p>
-      </div>
-      <div class="column is-half">
-        <!-- Drop the clip at website/videos/parallel-2.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
-        <div class="ph" data-video="videos/parallel-2.mp4">
-          <span class="icon"><i class="fas fa-robot"></i></span>
-          <span class="ph-label">Video placeholder: parallel-2.mp4</span>
-          <span class="ph-text">Overhead sweep of the full training terrain, agents everywhere</span>
+      <div class="column is-two-thirds">
+        <!-- Drop the clip at website/videos/parallel-1.mp4 (16:9, ~10-20 s) and this image swaps to it automatically.
+             When videos/parallel-2.mp4 exists, re-add a second is-half column wired the same way. -->
+        <div class="media-slot" data-video="videos/parallel-1.mp4">
+          <img src="images/stills/parallel-2.jpg">
         </div>
         <p>Overhead view of the training run</p>
       </div>

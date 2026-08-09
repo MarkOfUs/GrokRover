@@ -78,6 +78,13 @@ body {
   margin-top: 0.25rem;
 }
 
+.hero-still,
+.media-slot img,
+.media-slot video {
+  width: 100%;
+  border-radius: 10px;
+}
+
 /* Placeholder tiles for media we haven't captured yet */
 .ph {
   position: relative;
