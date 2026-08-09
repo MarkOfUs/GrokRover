@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4586900.0,
+    1095400.0
+  ],
+  "lon_lat_deg": [
+    77.3837774236887,
+    18.480060561579407
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 40.97119140625,
+  "relief_std_m": 10.308856964111328,
+  "gates": {
+    "hm_detail_ratio": 0.7240900946282374,
+    "dtm_corr": 0.8764126723431407
+  },
+  "title": "Jezero's Rusted Shoulder"
+}

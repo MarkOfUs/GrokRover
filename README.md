@@ -9,7 +9,7 @@ To see RL GrokRovers drive on this terrain, check the website:
 
 ![jezero-delta-real](docs/img/jezero-delta-real-hero.png)
 
-The repo ships **30 real Jezero worlds** in [`worlds/`](worlds/) plus the
+The repo ships **31 real Jezero worlds** in [`worlds/`](worlds/) plus the
 pipeline to make more:
 
 ```bash
@@ -152,6 +152,7 @@ nothing for a rover to learn on. Same spot, raw vs full pipeline:
 | [jezero-fracture-mantle](worlds/jezero-fracture-mantle/) | 15.7 m | +0.79 |
 | [jezero-ripple-spires](worlds/jezero-ripple-spires/) | 23.7 m | +0.84 |
 | [jezero-ripple-scarp-2](worlds/jezero-ripple-scarp-2/) | 19.2 m | +0.79 |
+| [jezero-s-rusted-shoulder](worlds/jezero-s-rusted-shoulder/) | 41.0 m | +0.88 |
 
 Hi-res 5120x5760 textures ship for the first 13 worlds; the newest batch binds
 its base-resolution texture. Each world is self-contained and keeps its
