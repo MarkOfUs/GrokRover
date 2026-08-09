@@ -4,6 +4,9 @@
 orbital maps of Jezero Crater and is finished by a Grok Imagine edit that adds
 the sub-meter detail no instrument has measured.**
 
+To see RL GrokRovers drive on this terrain, check the website:
+**[grokrover.com](https://grokrover.com)**
+
 ![jezero-delta-real](docs/img/jezero-delta-real-hero.png)
 
 The repo ships **13 real Jezero worlds** in [`worlds/`](worlds/) plus the
