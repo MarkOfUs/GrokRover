@@ -172,9 +172,9 @@ usdrecord --camera /World/Cameras/HeroCam worlds/jezero-<slug>/scene.usda out.pn
 
 The same pipeline also runs without the seeding stage: one Grok Imagine call
 invents both canvas halves, terrain and heightmap jointly, and everything
-downstream is identical. One such world, [ochre-rift-caldera](worlds/ochre-rift-caldera/),
+downstream is identical. One such world, [rust-vein-highlands](worlds/rust-vein-highlands/),
 ships in `worlds/`:
 
-![ochre-rift-caldera, overhead](renders/ochre-rift-caldera-overhead.png)
+![rust-vein-highlands, overhead](renders/rust-vein-highlands-overhead.png)
 
-![ochre-rift-caldera, hero](renders/ochre-rift-caldera-hero.png)
+![rust-vein-highlands, hero](renders/rust-vein-highlands-hero.png)
