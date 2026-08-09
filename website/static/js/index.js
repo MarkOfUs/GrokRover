@@ -26,5 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
       slot.appendChild(video);
     });
     video.src = slot.dataset.video;
+    video.load();
   });
 });
