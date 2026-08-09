@@ -79,10 +79,70 @@ body {
 }
 
 .hero-still,
+video.media-slot,
 .media-slot img,
 .media-slot video {
   width: 100%;
   border-radius: 10px;
+}
+
+.rl-lede {
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.ppo-card {
+  border: 1px solid #e0cdbf;
+  border-radius: 12px;
+  background: #faf6f2;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.ppo-title {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #b8602f;
+}
+
+.ppo-sub {
+  font-size: 0.85rem;
+  color: #8a7565;
+  margin-bottom: 0.9rem;
+}
+
+.ppo-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.65rem 0;
+  border-top: 1px dashed #e0cdbf;
+  flex-wrap: wrap;
+}
+
+.ppo-eq {
+  font-family: 'Castoro', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #2a2a2a;
+  flex: 0 0 46%;
+  min-width: 260px;
+}
+
+.ppo-note {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #8a7565;
+}
+
+.ppo-run {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e0cdbf;
+  font-size: 0.85rem;
+  color: #b8602f;
+  text-align: center;
 }
 
 /* Placeholder tiles for media we haven't captured yet */

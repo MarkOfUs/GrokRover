@@ -50,8 +50,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <!-- TODO: replace # with the YouTube link -->
-                <a href="#"
+                <a href="https://youtu.be/wItRV0lduKU"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -114,6 +113,10 @@
           <img src="images/pipeline/jezero-pale-bowl-raw-vs-grok.jpg">
           <p><strong>4. Built USD scene, same spot</strong>: raw orbital data vs. full pipeline</p>
         </div>
+        <div class="pipeline-step">
+          <video class="media-slot" data-src="videos/raw-vs-grok.mp4" controls autoplay loop muted playsinline></video>
+          <p><strong>Why the pipeline matters</strong>: left, driving on terrain from raw orbital data alone; right, the same place with Grok in the pipeline</p>
+        </div>
       </div>
     </div>
   </div>
@@ -123,12 +126,18 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <!-- Drop the clip at website/videos/inference.mp4 (16:9, ~10-20 s) and this image swaps to it automatically -->
-        <div class="media-slot" data-video="videos/inference.mp4">
-          <img src="images/stills/inference.jpg">
-        </div>
-        <p>GrokRovers on pipeline terrain. Red sphere: the goal. Green arrow: commanded heading.</p>
+      <div class="column has-text-centered">
+        <p>Chase camera on pipeline terrain. Red sphere: the goal. Green arrow: commanded heading.</p>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/chase-pre.mp4" controls autoplay loop muted playsinline></video>
+        <p><strong>Untrained</strong>: GrokRovers wander, goals unreached</p>
+      </div>
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/chase-post.mp4" controls autoplay loop muted playsinline></video>
+        <p><strong>Trained</strong>: the policy drives straight to its goal</p>
       </div>
     </div>
   </div>
@@ -144,13 +153,69 @@
       </div>
     </div>
     <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <!-- Drop the clip at website/videos/parallel-1.mp4 (16:9, ~10-20 s) and this image swaps to it automatically.
-             When videos/parallel-2.mp4 exists, re-add a second is-half column wired the same way. -->
-        <div class="media-slot" data-video="videos/parallel-1.mp4">
-          <img src="images/stills/parallel-2.jpg">
+      <div class="column is-four-fifths">
+        <p class="rl-lede">Each GrokRover sweeps the terrain with a downward-facing lidar, reading the shape of the ground across a 4&thinsp;m &times; 4&thinsp;m patch at 25&thinsp;cm resolution, and knows how far and which way its goal is. From that it outputs two commands, <strong>drive</strong> and <strong>turn</strong>, and its steering does the rest. It is rewarded for closing on the goal and penalized for rolling over, wandering, or reversing.</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="ppo-card">
+          <p class="ppo-title">Proximal Policy Optimization</p>
+          <p class="ppo-sub">two networks train together from the same rollouts: the policy &pi;<sub>&theta;</sub> drives, the value model V<sub>&phi;</sub> predicts how well the drive will go</p>
+          <div class="ppo-row">
+            <span class="ppo-eq">&delta;<sub>t</sub> = r<sub>t</sub> + &gamma;&thinsp;V<sub>&phi;</sub>(s<sub>t+1</sub>) &minus; V<sub>&phi;</sub>(s<sub>t</sub>)</span>
+            <span class="ppo-note">the surprise: what happened, minus what the value model expected</span>
+          </div>
+          <div class="ppo-row">
+            <span class="ppo-eq">&Acirc;<sub>t</sub> = &Sigma;<sub>k</sub> (&gamma;&lambda;)<sup>k</sup> &delta;<sub>t+k</sub></span>
+            <span class="ppo-note">the advantage: surprises accumulated over the drive, measured on rollouts collected by the old policy &pi;<sub>old</sub>. Was this action better than expected?</span>
+          </div>
+          <div class="ppo-row">
+            <span class="ppo-eq">&rho;<sub>t</sub>(&theta;) = &pi;<sub>&theta;</sub>(a<sub>t</sub>&thinsp;|&thinsp;s<sub>t</sub>) / &pi;<sub>old</sub>(a<sub>t</sub>&thinsp;|&thinsp;s<sub>t</sub>)</span>
+            <span class="ppo-note">the ratio: how much more the updated policy favors the action than the policy that drove it</span>
+          </div>
+          <div class="ppo-row">
+            <span class="ppo-eq">L(&theta;) = &minus;&#120124;<sub>t</sub>&#8202;[ min( &rho;<sub>t</sub>&thinsp;&Acirc;<sub>t</sub>,&nbsp;clip(&rho;<sub>t</sub>, 1&minus;&epsilon;, 1+&epsilon;)&thinsp;&Acirc;<sub>t</sub> ) ]</span>
+            <span class="ppo-note">the update: favor actions that beat expectations, clipped so no single step moves the policy too far</span>
+          </div>
+          <p class="ppo-run">one training hour: 512 rovers in parallel &middot; 40&thinsp;s episodes &middot; goals ~5&thinsp;m out &middot; ~30k transitions/s &middot; ~37M transitions</p>
         </div>
-        <p>Overhead view of the training run</p>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/swarm-pre.mp4" controls autoplay loop muted playsinline></video>
+        <p><strong>Start of training</strong>: the swarm has no idea how to drive</p>
+      </div>
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/swarm-post.mp4" controls autoplay loop muted playsinline></video>
+        <p><strong>Trained</strong>: the same swarm drives with purpose</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video gallery -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">Video Gallery</h2>
+        <p>Trained GrokRovers driving different worlds from the terrain library.</p>
+      </div>
+    </div>
+    <div class="columns is-multiline is-centered has-text-centered">
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/drive-1.mp4" controls autoplay loop muted playsinline></video>
+      </div>
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/drive-2.mp4" controls autoplay loop muted playsinline></video>
+      </div>
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/drive-3.mp4" controls autoplay loop muted playsinline></video>
+      </div>
+      <div class="column is-half">
+        <video class="media-slot" data-src="videos/drive-4.mp4" controls autoplay loop muted playsinline></video>
       </div>
     </div>
   </div>
