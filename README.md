@@ -151,7 +151,7 @@ nothing for a rover to learn on. Same spot, raw vs full pipeline:
 | [jezero-ribbed-delta-scarps](worlds/jezero-ribbed-delta-scarps/) | 19.7 m | +0.91 |
 | [jezero-fracture-mantle](worlds/jezero-fracture-mantle/) | 15.7 m | +0.79 |
 | [jezero-ripple-spires](worlds/jezero-ripple-spires/) | 23.7 m | +0.84 |
-| [jezero-ripple-scarp-2](worlds/jezero-ripple-scarp-2/) | 19.2 m | +0.79 |
+| [jezero-ripple-scarp-northeast](worlds/jezero-ripple-scarp-northeast/) | 19.2 m | +0.79 |
 | [jezero-s-rusted-shoulder](worlds/jezero-s-rusted-shoulder/) | 41.0 m | +0.88 |
 
 Hi-res 5120x5760 textures ship for the first 13 worlds; the newest batch binds
