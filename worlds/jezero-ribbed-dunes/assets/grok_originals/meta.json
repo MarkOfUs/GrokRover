@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583700.0,
+    1093400.0
+  ],
+  "lon_lat_deg": [
+    77.32979148814273,
+    18.44631935186318
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 25.921875,
+  "relief_std_m": 6.447501182556152,
+  "gates": {
+    "hm_detail_ratio": 1.0400572016142333,
+    "dtm_corr": 0.6750634695423822
+  },
+  "title": "Jezero Ribbed Dunes"
+}

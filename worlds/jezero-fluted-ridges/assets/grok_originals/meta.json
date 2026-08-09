@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4590500.0,
+    1092600.0
+  ],
+  "lon_lat_deg": [
+    77.44451160117791,
+    18.432822867976686
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 14.888427734375,
+  "relief_std_m": 3.545072078704834,
+  "gates": {
+    "hm_detail_ratio": 0.7899128039141636,
+    "dtm_corr": 0.7028151162595907
+  },
+  "title": "Jezero Fluted Ridges"
+}

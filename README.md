@@ -9,7 +9,7 @@ To see RL GrokRovers drive on this terrain, check the website:
 
 ![jezero-delta-real](docs/img/jezero-delta-real-hero.png)
 
-The repo ships **17 real Jezero worlds** in [`worlds/`](worlds/) plus the
+The repo ships **23 real Jezero worlds** in [`worlds/`](worlds/) plus the
 pipeline to make more:
 
 ```bash
@@ -139,6 +139,12 @@ nothing for a rover to learn on. Same spot, raw vs full pipeline:
 | [jezero-ridged-ochre-labyrinth](worlds/jezero-ridged-ochre-labyrinth/) | 20.4 m | +0.93 |
 | [jezero-scarp-drift](worlds/jezero-scarp-drift/) | 22.9 m | +0.89 |
 | [jezero-ribbed-dust-yardangs](worlds/jezero-ribbed-dust-yardangs/) | 26.9 m | +1.00 |
+| [jezero-ribbed-scarps](worlds/jezero-ribbed-scarps/) | 10.8 m | +0.48 |
+| [jezero-ribbed-dunes](worlds/jezero-ribbed-dunes/) | 25.9 m | +0.68 |
+| [jezero-fluted-ridges](worlds/jezero-fluted-ridges/) | 14.9 m | +0.70 |
+| [jezero-ripple-scarp-east](worlds/jezero-ripple-scarp-east/) | 11.4 m | +0.46 |
+| [jezero-scarp-dustline](worlds/jezero-scarp-dustline/) | 11.8 m | +0.64 |
+| [jezero-dustfall-ridges](worlds/jezero-dustfall-ridges/) | 15.3 m | +0.57 |
 
 Hi-res 5120x5760 textures ship for the first 13 worlds; the newest batch binds
 its base-resolution texture. Each world is self-contained and keeps its

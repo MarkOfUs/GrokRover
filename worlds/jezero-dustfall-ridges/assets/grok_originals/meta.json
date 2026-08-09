@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4586100.0,
+    1095800.0
+  ],
+  "lon_lat_deg": [
+    77.3702809398022,
+    18.486808803522656
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 15.34912109375,
+  "relief_std_m": 3.717226982116699,
+  "gates": {
+    "hm_detail_ratio": 0.7080178132959822,
+    "dtm_corr": 0.5741947647412131
+  },
+  "title": "Jezero Dustfall Ridges"
+}

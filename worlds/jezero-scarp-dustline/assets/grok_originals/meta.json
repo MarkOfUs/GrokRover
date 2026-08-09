@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4585100.0,
+    1095400.0
+  ],
+  "lon_lat_deg": [
+    77.35341033494409,
+    18.480060561579407
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 11.82373046875,
+  "relief_std_m": 2.953220844268799,
+  "gates": {
+    "hm_detail_ratio": 0.9213794371404473,
+    "dtm_corr": 0.644291542058712
+  },
+  "title": "Jezero Scarp Dustline"
+}
