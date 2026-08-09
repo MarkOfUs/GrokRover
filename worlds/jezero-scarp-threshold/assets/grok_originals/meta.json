@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4585900.0,
+    1093600.0
+  ],
+  "lon_lat_deg": [
+    77.36690681883057,
+    18.449693472834802
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 25.703369140625,
+  "relief_std_m": 7.772131443023682,
+  "gates": {
+    "hm_detail_ratio": 0.7484398759260051,
+    "dtm_corr": 0.5089507751758294
+  },
+  "title": "Jezero Scarp Threshold"
+}

@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4590100.0,
+    1096800.0
+  ],
+  "lon_lat_deg": [
+    77.43776335923465,
+    18.503679408380773
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 22.935546875,
+  "relief_std_m": 7.858948707580566,
+  "gates": {
+    "hm_detail_ratio": 0.7166001947458632,
+    "dtm_corr": 0.8912978515323743
+  },
+  "title": "Jezero Scarp Drift"
+}
