@@ -4,6 +4,9 @@
 orbital maps of Jezero Crater and is finished by a Grok Imagine edit that adds
 the sub-meter detail no instrument has measured.**
 
+Built in 12 hours at the [xAI Grokathon](https://x.ai/grokathon), an
+invite-only event of ~200 hackers building with Grok.
+
 To see RL GrokRovers drive on this terrain, check the website:
 **[grokrover.com](https://grokrover.com)**
 
