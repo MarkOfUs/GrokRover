@@ -94,8 +94,8 @@ The same treatment on a second patch, seeded at the delta front:
 ### 3. Recursive quadrant re-rendering: rover-camera density
 
 Identical to the imagined-world pipeline: `upscale()` splits the texture into
-4 overlapping quadrants, has Grok Imagine (`image_edit`) re-render each at
-~2x density,
+4 overlapping quadrants, has Grok Imagine image editing (`image_edit`)
+re-render each at ~2x density,
 recurses three levels (`4 + 16 + 64 = 84` edit calls per world), color-matches
 every tile to its source, and feather-stitches the tree back together for 8x
 linear resolution. The heightmap is never touched, so geometry and

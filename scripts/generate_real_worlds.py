@@ -175,7 +175,10 @@ def make_world(idx: int, cx: float, cy: float, relief: float) -> str:
     slug = "jezero-" + slugify(title)
     w = ROOT / "worlds" / slug
     if w.exists():
-        slug = f"{slug}-{idx}"
+        n = 2
+        while (ROOT / "worlds" / f"{slug}-{n}").exists():
+            n += 1
+        slug = f"{slug}-{n}"
         w = ROOT / "worlds" / slug
     (w / "assets" / "grok_originals").mkdir(parents=True, exist_ok=True)
 
@@ -212,12 +215,15 @@ def main() -> None:
     ap.add_argument("--jobs", type=int, default=3)
     ap.add_argument("--skip", type=int, default=0,
                     help="skip the first N cells of the draw (continue a batch)")
+    ap.add_argument("--seed", type=int, default=SEED,
+                    help="shuffle seed; change it to draw cells in a new order")
     args = ap.parse_args()
 
     print("scouting candidate cells ...", flush=True)
     cells = candidate_cells()
-    print(f"{len(cells)} valid cells; drawing {args.count} (seed {SEED})", flush=True)
-    random.Random(SEED).shuffle(cells)
+    print(f"{len(cells)} valid cells; drawing {args.count} (seed {args.seed})",
+          flush=True)
+    random.Random(args.seed).shuffle(cells)
 
     # never redraw ground an existing world already covers
     taken = set()
