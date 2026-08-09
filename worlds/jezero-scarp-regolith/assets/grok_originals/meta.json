@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4586100.0,
+    1092800.0
+  ],
+  "lon_lat_deg": [
+    77.3702809398022,
+    18.43619698894831
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 29.6103515625,
+  "relief_std_m": 7.569510459899902,
+  "gates": {
+    "hm_detail_ratio": 0.6780354582520691,
+    "dtm_corr": 0.9866734919998821
+  },
+  "title": "Jezero Scarp Regolith"
+}

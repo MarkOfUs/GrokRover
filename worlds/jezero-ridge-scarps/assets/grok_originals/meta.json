@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583100.0,
+    1096400.0
+  ],
+  "lon_lat_deg": [
+    77.31966912522786,
+    18.496931166437527
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 34.115234375,
+  "relief_std_m": 9.146836280822754,
+  "gates": {
+    "hm_detail_ratio": 0.7704863523735263,
+    "dtm_corr": 0.6410936812938254
+  },
+  "title": "Jezero Ridge Scarps"
+}

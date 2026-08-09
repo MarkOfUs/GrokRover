@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583700.0,
+    1096200.0
+  ],
+  "lon_lat_deg": [
+    77.32979148814273,
+    18.493557045465902
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 25.147216796875,
+  "relief_std_m": 5.630000591278076,
+  "gates": {
+    "hm_detail_ratio": 0.5945740929593519,
+    "dtm_corr": 0.7963220511587041
+  },
+  "title": "Jezero Finger Ridges"
+}

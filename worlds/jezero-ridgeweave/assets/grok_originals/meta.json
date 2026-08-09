@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583900.0,
+    1096800.0
+  ],
+  "lon_lat_deg": [
+    77.33316560911435,
+    18.503679408380773
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 21.206298828125,
+  "relief_std_m": 5.296529293060303,
+  "gates": {
+    "hm_detail_ratio": 0.6275671759174641,
+    "dtm_corr": 0.9752284606390915
+  },
+  "title": "Jezero Ridgeweave"
+}

@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4591900.0,
+    1093400.0
+  ],
+  "lon_lat_deg": [
+    77.46813044797928,
+    18.44631935186318
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 12.465576171875,
+  "relief_std_m": 3.2606313228607178,
+  "gates": {
+    "hm_detail_ratio": 0.6209895336123705,
+    "dtm_corr": 0.9452347246628288
+  },
+  "title": "Jezero Scarp Duality"
+}

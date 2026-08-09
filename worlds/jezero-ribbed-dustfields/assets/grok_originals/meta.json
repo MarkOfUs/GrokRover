@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583700.0,
+    1093600.0
+  ],
+  "lon_lat_deg": [
+    77.32979148814273,
+    18.449693472834802
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 25.22607421875,
+  "relief_std_m": 6.1712141036987305,
+  "gates": {
+    "hm_detail_ratio": 1.1500850375046872,
+    "dtm_corr": 0.9500132260217934
+  },
+  "title": "Jezero Ribbed Dustfields"
+}

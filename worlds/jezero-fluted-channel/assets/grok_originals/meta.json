@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4585700.0,
+    1093200.0
+  ],
+  "lon_lat_deg": [
+    77.36353269785896,
+    18.44294523089156
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 19.74853515625,
+  "relief_std_m": 5.611907958984375,
+  "gates": {
+    "hm_detail_ratio": 0.5866526795375853,
+    "dtm_corr": 0.6749653040430883
+  },
+  "title": "Jezero Fluted Channel"
+}
