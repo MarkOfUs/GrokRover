@@ -90,7 +90,7 @@
     <div class="columns is-centered">
       <div class="column has-text-centered">
         <h2 class="title">Pipeline</h2>
-        <p>Every world starts from two co-registered USGS HiRISE mosaics of Jezero Crater (25 cm photo, 1 m stereo DTM), the same maps Perseverance used to land. A skill-loaded Grok agent authors the edit prompt, Grok Imagine redraws the patch past the resolution limit, and gates keep the new elevation correlated with the real DTM.</p>
+        <p>Every world starts from the best data that exists for another planet: the two USGS mosaics of Jezero Crater built from HiRISE, the highest-resolution camera in orbit around Mars, assembled as the hazard basemap Perseverance navigated against during landing. The photo resolves 25 cm; the elevation model is inferred from it by stereo photogrammetry &mdash; two orbital passes image the same ground from different angles and the per-pixel parallax becomes height &mdash; which stops at 1 m posts. Rover-scale rocks are therefore visible in the imagery but missing from the elevation model. We take the inference further: a skill-loaded Grok agent authors the edit prompt, Grok Imagine redraws photo and heightmap jointly so the detail the camera can see becomes elevation, and gates keep the result correlated with the real DTM.</p>
       </div>
     </div>
     <div class="columns is-centered has-text-centered">
