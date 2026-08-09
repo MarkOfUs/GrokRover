@@ -25,9 +25,8 @@ flowchart LR
     F --> G["terrain_texture.png\n+ heightmap.png"]
     G --> H["recursive detail\nupscale() - 84\nGrok Imagine edits"]
     H --> I["terrain_hires.jpg\n8x resolution"]
-    G --> J["build_scene.py\nheightmap -> mesh"]
+    G --> J["build_scene.py\n-> scene.usda"]
     I --> J
-    J --> K["scene.usda\nusdchecker + usdrecord gate"]
 ```
 
 ### 1. The real data
