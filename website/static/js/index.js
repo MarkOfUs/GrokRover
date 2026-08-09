@@ -11,4 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   document.querySelectorAll('video[data-src]').forEach(video => lazyVideoObserver.observe(video));
+
+  // Placeholder tiles with data-video swap themselves for the clip once it exists
+  document.querySelectorAll('.ph[data-video]').forEach(ph => {
+    const video = document.createElement('video');
+    video.controls = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.setAttribute('playsinline', '');
+    video.addEventListener('loadeddata', () => ph.replaceWith(video));
+    video.src = ph.dataset.video;
+  });
 });

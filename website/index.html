@@ -66,8 +66,8 @@
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <!-- TODO: swap for <video src="videos/inference.mp4" controls autoplay loop muted playsinline> -->
-          <div class="ph">
+          <!-- Drop the clip at website/videos/inference.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
+          <div class="ph" data-video="videos/inference.mp4">
             <span class="icon"><i class="fas fa-flag-checkered"></i></span>
             <span class="ph-label">Video placeholder: inference.mp4</span>
             <span class="ph-text">Trained GrokRover drives to its goal, onboard camera views alongside</span>
@@ -130,6 +130,12 @@
       </div>
     </div>
     <div class="columns is-multiline is-mobile has-text-centered">
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/rust-vein-highlands">
+          <img src="images/worlds/rust-vein-highlands.jpg">
+          <p>rust-vein-highlands (imagined)</p>
+        </a>
+      </div>
       <div class="column is-one-quarter is-half-mobile world-card">
         <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-delta-real">
           <img src="images/worlds/jezero-delta-real.jpg">
@@ -208,12 +214,6 @@
           <p>jezero-scarp-regolith</p>
         </a>
       </div>
-      <div class="column is-one-quarter is-half-mobile world-card">
-        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/rust-vein-highlands">
-          <img src="images/worlds/rust-vein-highlands.jpg">
-          <p>rust-vein-highlands (imagined)</p>
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -229,8 +229,8 @@
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-half">
-        <!-- TODO: swap for <video src="videos/parallel-1.mp4" controls autoplay loop muted playsinline> -->
-        <div class="ph">
+        <!-- Drop the clip at website/videos/parallel-1.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
+        <div class="ph" data-video="videos/parallel-1.mp4">
           <span class="icon"><i class="fas fa-robot"></i></span>
           <span class="ph-label">Video placeholder: parallel-1.mp4</span>
           <span class="ph-text">Parallel GrokRover environments training across a boulder field</span>
@@ -238,8 +238,8 @@
         <p>Parallel training environments</p>
       </div>
       <div class="column is-half">
-        <!-- TODO: swap for <video src="videos/parallel-2.mp4" controls autoplay loop muted playsinline> -->
-        <div class="ph">
+        <!-- Drop the clip at website/videos/parallel-2.mp4 (16:9, ~10-20 s) and this tile swaps to it automatically -->
+        <div class="ph" data-video="videos/parallel-2.mp4">
           <span class="icon"><i class="fas fa-robot"></i></span>
           <span class="ph-label">Video placeholder: parallel-2.mp4</span>
           <span class="ph-text">Overhead sweep of the full training terrain, agents everywhere</span>
