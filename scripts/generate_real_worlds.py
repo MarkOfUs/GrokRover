@@ -210,13 +210,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--count", type=int, default=10)
     ap.add_argument("--jobs", type=int, default=3)
+    ap.add_argument("--skip", type=int, default=0,
+                    help="skip the first N cells of the draw (continue a batch)")
     args = ap.parse_args()
 
     print("scouting candidate cells ...", flush=True)
     cells = candidate_cells()
     print(f"{len(cells)} valid cells; drawing {args.count} (seed {SEED})", flush=True)
     random.Random(SEED).shuffle(cells)
-    picked = cells[:args.count]
+    picked = cells[args.skip:args.skip + args.count]
 
     with ThreadPoolExecutor(max_workers=args.jobs) as ex:
         for line in ex.map(lambda t: make_world(*t),
