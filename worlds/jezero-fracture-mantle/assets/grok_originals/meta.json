@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4591900.0,
+    1092800.0
+  ],
+  "lon_lat_deg": [
+    77.46813044797928,
+    18.43619698894831
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 15.719970703125,
+  "relief_std_m": 4.08243989944458,
+  "gates": {
+    "hm_detail_ratio": 0.6740346222741666,
+    "dtm_corr": 0.7925306987853894
+  },
+  "title": "Jezero Fracture Mantle"
+}

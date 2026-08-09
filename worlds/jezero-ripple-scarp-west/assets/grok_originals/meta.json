@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583900.0,
+    1092000.0
+  ],
+  "lon_lat_deg": [
+    77.33316560911435,
+    18.42270050506182
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 23.65283203125,
+  "relief_std_m": 7.981380939483643,
+  "gates": {
+    "hm_detail_ratio": 0.48294233709214146,
+    "dtm_corr": 0.9515135548215673
+  },
+  "title": "Jezero Ripple Scarps"
+}

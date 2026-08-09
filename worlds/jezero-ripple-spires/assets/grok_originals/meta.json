@@ -1,0 +1,22 @@
+{
+  "source": "USGS Mars2020 TRN HiRISE mosaics (DTM 1 m/px, ortho 25 cm/px)",
+  "center_proj_m": [
+    4583300.0,
+    1093000.0
+  ],
+  "lon_lat_deg": [
+    77.32304324619948,
+    18.439571109919935
+  ],
+  "patch_m": [
+    160,
+    180
+  ],
+  "elev_range_m": 23.74951171875,
+  "relief_std_m": 8.22093391418457,
+  "gates": {
+    "hm_detail_ratio": 0.8367186952291048,
+    "dtm_corr": 0.8396294211366084
+  },
+  "title": "Jezero Ripple Spires"
+}
