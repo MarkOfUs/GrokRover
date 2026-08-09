@@ -41,7 +41,7 @@ showing the potential of foundation image models for 3D surface
 reconstruction in planetary applications. Added detail is plausible rather
 than measured; the ≥1 m structure remains the real terrain.
 
-![real-data input](docs/img/jezero-pale-bowl-seed.png)
+![real-data input](docs/img/jezero-delta-real-seed.png)
 
 Two acceptance gates per real-data world: the heightmap detail ratio (v1),
 plus correlation of the height half against the source DTM — rejects runs
@@ -50,11 +50,11 @@ phrasing determines which you get: "keep every shadow" → photo copy
 (r ≈ 0.3 vs DTM), the v1 "matte pure elevation" wording → usable heightmap
 (r ≈ 0.8–0.98 on accepted worlds).
 
-![enhanced canvas](docs/img/jezero-pale-bowl-canvas.png)
+![enhanced canvas](docs/img/jezero-delta-real-canvas.png)
 
 Same patch after the recursive upscale, base res vs final texture:
 
-![detail compare](docs/img/jezero-pale-bowl-detail-compare.jpg)
+![detail compare](docs/img/jezero-delta-real-detail-compare.jpg)
 
 **Prompt-craft:** write prompts fresh from `grok_skills/` (taken from the
 grok-build CLI); don't hardcode them.
@@ -83,9 +83,9 @@ Cameras: `/World/Cameras/OverheadCam` (top-down), `/World/Cameras/HeroCam`
 (3/4 view), `/World/Rover/RoverCam` (first-person mast view, for RL
 observations).
 
-![overhead](docs/img/jezero-pale-bowl-overhead.png)
+![overhead](docs/img/jezero-delta-real-overhead.png)
 
-![real world render](docs/img/jezero-pale-bowl-hero.png)
+![real world render](docs/img/jezero-delta-real-hero.png)
 
 The same spot built from the raw data alone vs the full pipeline:
 
