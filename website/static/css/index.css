@@ -49,6 +49,11 @@ body {
     height: 100%;
 }
 
+.pipeline-lede p {
+  margin-bottom: 0.35rem;
+  color: #555;
+}
+
 .pipeline-step {
   margin-bottom: 2.5rem;
 }
