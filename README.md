@@ -19,7 +19,7 @@ python scripts/generate_real_worlds.py --count 10 --jobs 3   # needs grok CLI + 
 flowchart LR
     A["USGS Jezero mosaics\nHiRISE 25 cm + DTM 1 m"] --> B["seed_canvas.py\ncrop a 160x180 m patch"]
     B --> C["seed canvas\nphoto | elevation"]
-    C --> D["Grok agent\nauthors edit prompt\nfrom grok_skills/"]
+    C --> D["Grok agent\nloads its imagine skills,\nauthors the edit prompt"]
     D --> E["Grok Imagine edit\n+ rover-scale detail"]
     E --> F["gates\nhm_detail_ratio()\n+ dtm_corr()"]
     F --> G["terrain_texture.png\n+ heightmap.png"]
