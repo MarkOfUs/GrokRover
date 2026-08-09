@@ -1,4 +1,4 @@
-# MarsProject
+# GrokRover
 
 **Drivable USD worlds of real places on Mars. Each world starts from NASA's
 orbital maps of Jezero Crater and is finished by a Grok Imagine edit that adds
