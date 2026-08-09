@@ -1,4 +1,4 @@
-# MarsProject — real Mars worlds
+# MarsProject
 
 **Drivable USD worlds of real places on Mars. Each world starts from NASA's
 orbital maps of Jezero Crater and is finished by a Grok Imagine edit that adds
@@ -30,10 +30,10 @@ flowchart LR
     J --> K["scene.usda\nusdchecker + usdrecord gate"]
 ```
 
-### 1. The real data: as far as measurement goes
+### 1. The real data
 
 Two co-registered public USGS mosaics of Jezero Crater, built from images by
-HiRISE aboard NASA's Mars Reconnaissance Orbiter — the highest-resolution
+HiRISE aboard NASA's Mars Reconnaissance Orbiter, the highest-resolution
 camera at another planet. USGS Astrogeology assembled them as the hazard
 basemap for the Mars 2020 mission; Perseverance's Terrain Relative Navigation
 matched its descent camera against these exact maps during the Feb 2021
@@ -46,7 +46,7 @@ The elevation comes from [stereo photogrammetry](https://www.uahirise.org/dtm/ab
 two HiRISE passes photograph the same ground from different angles, and the
 per-pixel parallax becomes height at ~1 m posts (vertical precision tens of
 cm), tied to the MOLA laser-altimeter datum. 1 m/px is where orbital
-elevation measurement stops — the photo resolves ~30 cm features, so
+elevation measurement stops: the photo resolves ~30 cm features, so
 rover-scale rocks (0.2–0.5 m) are visible in the imagery but absent from the
 elevation model.
 
@@ -61,8 +61,8 @@ composes the pipeline's usual split canvas from real photo + real elevation:
 A skill-loaded Grok agent authors the edit prompt itself (its `imagine` and
 game-asset skills, the same way it prompts its own image tool) and Grok
 Imagine redraws the canvas: every landform stays in place, and both halves
-gain rover-scale rocks, ripples and regolith — the heightmap half as matte
-pure elevation. The result is new 3D surface values: elevation the
+gain rover-scale rocks, ripples and regolith; the heightmap half stays
+matte pure elevation. The result is new 3D surface values: elevation the
 instruments never measured, inferred from the photo that can see it.
 Purpose-trained networks have shown single-image DTM estimation is viable for
 planetary science; here a general-purpose image model does it zero-shot,
@@ -80,7 +80,7 @@ Guards in [`generate_real_worlds.py`](scripts/generate_real_worlds.py):
   worlds score r ≈ 0.5–0.99). Prompt wording decides this: "keep every
   shadow" yields a photo copy, "matte pure elevation" yields height.
 
-About half of edit attempts fail a gate and are retried — the gate scores of
+About half of edit attempts fail a gate and are retried; the gate scores of
 every accepted world are recorded in its `meta.json`.
 
 The same treatment on a second patch, seeded at the delta front:
@@ -95,7 +95,7 @@ Identical to the imagined-world pipeline: `upscale()` splits the texture into
 4 overlapping quadrants, has Grok Imagine (`image_edit`) re-render each at
 ~2x density,
 recurses three levels (`4 + 16 + 64 = 84` edit calls per world), color-matches
-every tile to its source, and feather-stitches the tree back together — 8x
+every tile to its source, and feather-stitches the tree back together for 8x
 linear resolution. The heightmap is never touched, so geometry and
 texture/elevation alignment are unchanged.
 
@@ -111,7 +111,7 @@ meters), `UsdPreviewSurface` material with the hi-res texture, spawn
 flattening, `OverheadCam` + `HeroCam`, Grok-generated sky dome. Every build
 must pass `usdchecker` and proof-render with `usdrecord`.
 
-What it buys: built from the raw data alone, the ground is 1 m smooth ramps —
+Built from the raw data alone, the ground is 1 m smooth ramps with
 nothing for a rover to learn on. Same spot, raw vs full pipeline:
 
 ![raw vs grok](docs/img/jezero-pale-bowl-raw-vs-grok.png)
