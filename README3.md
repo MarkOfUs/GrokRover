@@ -17,7 +17,7 @@ python scripts/generate_real_worlds.py --count 10 --jobs 3   # needs grok CLI + 
 
 ```mermaid
 flowchart LR
-    A["USGS Jezero mosaics\nHiRISE 25 cm + DTM 1 m"] --> B["seed_canvas.py\nranged reads, one patch"]
+    A["USGS Jezero mosaics\nHiRISE 25 cm + DTM 1 m"] --> B["seed_canvas.py\ncrop a 160x180 m patch"]
     B --> C["seed canvas\nphoto | elevation"]
     C --> D["Grok agent\nauthors edit prompt\nfrom grok_skills/"]
     D --> E["Grok Imagine edit\n+ rover-scale detail"]
