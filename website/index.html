@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GrokRover: a reinforcement-learned Mars rover driving on real Jezero Crater terrain, finished past the resolution limit by Grok Imagine.">
+  <meta name="keywords" content="GrokRover, Mars, Jezero, reinforcement learning, Isaac Sim, Isaac Lab, Grok Imagine, rover, terrain">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GrokRover: Learning to Drive on Real Mars Terrain</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GrokRover: Learning to Drive on Real Mars Terrain">
+  <meta property="og:description" content="Drivable USD worlds of real places on Mars, finished by Grok Imagine, and a rover that learns to drive them in Isaac Sim.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/pipeline/jezero-delta-real-hero.jpg">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GrokRover: Learning to Drive on Real Mars Terrain</h1>
+
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Markus Hoehn,</span>
+                <span class="author-block">Gabriel Noya</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://github.com/MarkOfUs/GrokRover"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <!-- TODO: replace # with the YouTube link -->
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- TODO: swap for <video src="videos/inference.mp4" controls autoplay loop muted playsinline> -->
+          <div class="ph">
+            <span class="icon"><i class="fas fa-flag-checkered"></i></span>
+            <span class="ph-label">Video placeholder &mdash; inference.mp4</span>
+            <span class="ph-text">Trained GrokRover drives to its goal, onboard camera views alongside</span>
+          </div>
+          <p>Trained GrokRover policy, point-goal navigation</p>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <p>GrokRover is trained with reinforcement learning in NVIDIA Isaac Sim, on real Jezero Crater terrain finished by Grok Imagine edits that a Grok agent prompts itself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pipeline -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">Pipeline</h2>
+        <p>Every world starts from two co-registered USGS HiRISE mosaics of Jezero Crater (25 cm photo, 1 m stereo DTM), the same maps Perseverance used to land. A skill-loaded Grok agent authors the edit prompt, Grok Imagine redraws the patch past the resolution limit, and gates keep the new elevation correlated with the real DTM.</p>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="pipeline-step">
+          <img src="images/pipeline/jezero-pale-bowl-seed.jpg">
+          <p><strong>1. Seed canvas from real data</strong> &mdash; HiRISE photo | stereo elevation</p>
+        </div>
+        <div class="pipeline-step">
+          <img src="images/pipeline/jezero-pale-bowl-canvas.jpg">
+          <p><strong>2. Grok Imagine edit</strong> &mdash; rover-scale rocks and ripples in both halves</p>
+        </div>
+        <div class="pipeline-step">
+          <img src="images/pipeline/jezero-pale-bowl-detail-compare.jpg">
+          <p><strong>3. Recursive re-rendering</strong> &mdash; 84 edits per world, 8x texture density</p>
+        </div>
+        <div class="pipeline-step">
+          <img src="images/pipeline/jezero-pale-bowl-raw-vs-grok.jpg">
+          <p><strong>4. Built USD scene, same spot</strong> &mdash; raw orbital data vs. full pipeline</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Worlds -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">The Terrain Library</h2>
+        <p>13 real Jezero worlds plus one imagined from scratch, each a self-contained USD scene with full real-data provenance. GrokRover trains across all of them.</p>
+      </div>
+    </div>
+    <div class="columns is-multiline is-mobile has-text-centered">
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-delta-real">
+          <img src="images/worlds/jezero-delta-real.jpg">
+          <p>jezero-delta-real</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-finger-ridges">
+          <img src="images/worlds/jezero-finger-ridges.jpg">
+          <p>jezero-finger-ridges</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-fluted-channel">
+          <img src="images/worlds/jezero-fluted-channel.jpg">
+          <p>jezero-fluted-channel</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-pale-bowl">
+          <img src="images/worlds/jezero-pale-bowl.jpg">
+          <p>jezero-pale-bowl</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-paleochannel-rise">
+          <img src="images/worlds/jezero-paleochannel-rise.jpg">
+          <p>jezero-paleochannel-rise</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ribbed-dunefolds">
+          <img src="images/worlds/jezero-ribbed-dunefolds.jpg">
+          <p>jezero-ribbed-dunefolds</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ribbed-dustfields">
+          <img src="images/worlds/jezero-ribbed-dustfields.jpg">
+          <p>jezero-ribbed-dustfields</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ridge-scarps">
+          <img src="images/worlds/jezero-ridge-scarps.jpg">
+          <p>jezero-ridge-scarps</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ridgeweave">
+          <img src="images/worlds/jezero-ridgeweave.jpg">
+          <p>jezero-ridgeweave</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ripple-barrens">
+          <img src="images/worlds/jezero-ripple-barrens.jpg">
+          <p>jezero-ripple-barrens</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-ripple-scarp">
+          <img src="images/worlds/jezero-ripple-scarp.jpg">
+          <p>jezero-ripple-scarp</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-scarp-duality">
+          <img src="images/worlds/jezero-scarp-duality.jpg">
+          <p>jezero-scarp-duality</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/jezero-scarp-regolith">
+          <img src="images/worlds/jezero-scarp-regolith.jpg">
+          <p>jezero-scarp-regolith</p>
+        </a>
+      </div>
+      <div class="column is-one-quarter is-half-mobile world-card">
+        <a href="https://github.com/MarkOfUs/GrokRover/tree/master/worlds/rust-vein-highlands">
+          <img src="images/worlds/rust-vein-highlands.jpg">
+          <p>rust-vein-highlands (imagined)</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Training -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title">Massively Parallel Training</h2>
+        <p>Hundreds of GrokRovers learn point-goal navigation simultaneously on GPU in Isaac Lab, terrain tuned so a naive driver fails about a third of the time.</p>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-half">
+        <!-- TODO: swap for <video src="videos/parallel-1.mp4" controls autoplay loop muted playsinline> -->
+        <div class="ph">
+          <span class="icon"><i class="fas fa-robot"></i></span>
+          <span class="ph-label">Video placeholder &mdash; parallel-1.mp4</span>
+          <span class="ph-text">Parallel GrokRover environments training across a boulder field</span>
+        </div>
+        <p>Parallel training environments</p>
+      </div>
+      <div class="column is-half">
+        <!-- TODO: swap for <video src="videos/parallel-2.mp4" controls autoplay loop muted playsinline> -->
+        <div class="ph">
+          <span class="icon"><i class="fas fa-robot"></i></span>
+          <span class="ph-label">Video placeholder &mdash; parallel-2.mp4</span>
+          <span class="ph-text">Overhead sweep of the full training terrain, agents everywhere</span>
+        </div>
+        <p>Overhead view of the training run</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title">Video</h2>
+        <!-- TODO: swap the placeholder for the YouTube embed:
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        -->
+        <div class="ph">
+          <span class="icon"><i class="fab fa-youtube"></i></span>
+          <span class="ph-label">YouTube placeholder</span>
+          <span class="ph-text">Full GrokRover demo video</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>Terrain data from <a href="https://astrogeology.usgs.gov/search/map/Mars/Mars2020/JEZ_hirise_soc_006_orthoMosaic_25cm_Eqc_latTs0_lon0_first">USGS Astrogeology HiRISE mosaics</a> of Jezero Crater. Rover training built on <a href="https://github.com/isaac-sim/IsaacLab">Isaac Lab</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
